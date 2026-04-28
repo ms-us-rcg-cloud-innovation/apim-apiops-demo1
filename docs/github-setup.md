@@ -10,7 +10,7 @@ I'll do this for you with `gh`:
 
 ```bash
 cd apim-apiops-demo1
-gh repo create AiGhostMod/apim-apiops-demo1 --private --source=. --remote=origin --push
+gh repo create ms-us-rcg-cloud-innovation/apim-apiops-demo1 --private --source=. --remote=origin --push
 ```
 
 (or run it manually if you want to inspect the repo first).
@@ -19,7 +19,7 @@ gh repo create AiGhostMod/apim-apiops-demo1 --private --source=. --remote=origin
 
 ## 2. Create the two GitHub teams
 
-Visit https://github.com/orgs/AiGhostMod/teams/new and create:
+Visit https://github.com/orgs/ms-us-rcg-cloud-innovation/teams/new and create:
 
 - `team-catalog` — add the developers who should own the catalog APIs
 - `team-orders`  — add the developers who should own the orders API
@@ -57,7 +57,7 @@ echo "AZURE_SUBSCRIPTION_ID=$SUB"
 
 ```bash
 APP_ID=<from above>
-REPO=AiGhostMod/apim-apiops-demo1
+REPO=ms-us-rcg-cloud-innovation/apim-apiops-demo1
 
 # main branch (publish workflows)
 az ad app federated-credential create --id "$APP_ID" --parameters '{
@@ -148,7 +148,7 @@ curl -sSLO https://github.com/actions/runner/releases/download/v${RUNNER_VERSION
 tar xzf actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 
 ./config.sh \
-  --url https://github.com/AiGhostMod/apim-apiops-demo1 \
+  --url https://github.com/ms-us-rcg-cloud-innovation/apim-apiops-demo1 \
   --token <PASTE TOKEN HERE> \
   --name apimkt-runner-vm \
   --labels self-hosted,apim-vnet \

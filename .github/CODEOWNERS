@@ -1,26 +1,26 @@
 # CODEOWNERS — enforces per-team review on APIOps artifacts
-# Replace @AiGhostMod/* with real GitHub teams once you create them.
+# Replace @ms-us-rcg-cloud-innovation/* with real GitHub teams once you create them.
 
 # team-catalog owns the two catalog APIs and their specs
-/apimartifacts/apis/catalog-products-api/   @AiGhostMod/team-catalog
-/apimartifacts/apis/catalog-weather-api/    @AiGhostMod/team-catalog
-/apimartifacts/products/team-catalog/       @AiGhostMod/team-catalog
-/apimartifacts/backends/backend-catalog-*/  @AiGhostMod/team-catalog
-/specs/catalog-*.openapi.yaml               @AiGhostMod/team-catalog
-/configurations/configuration.team-catalog.yaml  @AiGhostMod/team-catalog
-/functions/catalog-products/                @AiGhostMod/team-catalog
-/functions/catalog-weather/                 @AiGhostMod/team-catalog
-/.github/workflows/publish-team-catalog.yaml @AiGhostMod/team-catalog
+/apimartifacts/apis/catalog-products-api/   @ms-us-rcg-cloud-innovation/team-catalog
+/apimartifacts/apis/catalog-weather-api/    @ms-us-rcg-cloud-innovation/team-catalog
+/apimartifacts/products/team-catalog/       @ms-us-rcg-cloud-innovation/team-catalog
+/apimartifacts/backends/backend-catalog-*/  @ms-us-rcg-cloud-innovation/team-catalog
+/specs/catalog-*.openapi.yaml               @ms-us-rcg-cloud-innovation/team-catalog
+/configurations/configuration.team-catalog.yaml  @ms-us-rcg-cloud-innovation/team-catalog
+/functions/catalog-products/                @ms-us-rcg-cloud-innovation/team-catalog
+/functions/catalog-weather/                 @ms-us-rcg-cloud-innovation/team-catalog
+/.github/workflows/publish-team-catalog.yaml @ms-us-rcg-cloud-innovation/team-catalog
 
 # team-orders owns the orders API
-/apimartifacts/apis/orders-real-api/        @AiGhostMod/team-orders
-/apimartifacts/products/team-orders/        @AiGhostMod/team-orders
-/apimartifacts/backends/backend-orders/     @AiGhostMod/team-orders
-/specs/orders.openapi.yaml                  @AiGhostMod/team-orders
-/configurations/configuration.team-orders.yaml  @AiGhostMod/team-orders
-/functions/orders/                          @AiGhostMod/team-orders
-/.github/workflows/publish-team-orders.yaml @AiGhostMod/team-orders
+/apimartifacts/apis/orders-real-api/        @ms-us-rcg-cloud-innovation/team-orders
+/apimartifacts/products/team-orders/        @ms-us-rcg-cloud-innovation/team-orders
+/apimartifacts/backends/backend-orders/     @ms-us-rcg-cloud-innovation/team-orders
+/specs/orders.openapi.yaml                  @ms-us-rcg-cloud-innovation/team-orders
+/configurations/configuration.team-orders.yaml  @ms-us-rcg-cloud-innovation/team-orders
+/functions/orders/                          @ms-us-rcg-cloud-innovation/team-orders
+/.github/workflows/publish-team-orders.yaml @ms-us-rcg-cloud-innovation/team-orders
 
 # Platform-owned (global policies, shared infra, runner workflow)
-/apimartifacts/policies/                    @AiGhostMod
-/.github/workflows/run-extractor.yaml       @AiGhostMod
+/apimartifacts/policies/                    @ms-us-rcg-cloud-innovation
+/.github/workflows/run-extractor.yaml       @ms-us-rcg-cloud-innovation
