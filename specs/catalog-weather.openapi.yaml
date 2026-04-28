@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: Catalog - Weather API
+  description: Weather lookup managed by team-catalog. Backed by Azure Function func-catalog-weather-9249.
+  version: 1.0.0
+servers:
+  - url: https://func-catalog-weather-9249.azurewebsites.net/api
+paths:
+  /weather/{city}:
+    get:
+      summary: Get weather for a city
+      operationId: getWeather
+      parameters:
+        - name: city
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  city:        { type: string }
+                  tempC:       { type: integer }
+                  conditions:  { type: string }
+                  source:      { type: string }
+                  generatedAt: { type: string, format: date-time }

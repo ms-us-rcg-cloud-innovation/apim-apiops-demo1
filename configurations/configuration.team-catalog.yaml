@@ -1,0 +1,16 @@
+# APIOps publisher configuration for team-catalog
+# Filters which artifacts the publisher will reconcile against the target APIM.
+# Anything NOT listed here will be ignored (existing APIs not in the list are left alone).
+apiNames:
+  - catalog-products-api
+  - catalog-weather-api
+productNames:
+  - team-catalog
+namedValueNames:
+  - catalog-products-host
+  - catalog-products-key
+  - catalog-weather-host
+  - catalog-weather-key
+backendNames:
+  - backend-catalog-products
+  - backend-catalog-weather

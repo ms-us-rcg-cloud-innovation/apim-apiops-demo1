@@ -1,0 +1,10 @@
+# APIOps publisher configuration for team-orders
+apiNames:
+  - orders-real-api
+productNames:
+  - team-orders
+namedValueNames:
+  - orders-host
+  - orders-key
+backendNames:
+  - backend-orders

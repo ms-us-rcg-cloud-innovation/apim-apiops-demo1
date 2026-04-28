@@ -1,0 +1,28 @@
+openapi: 3.0.3
+info:
+  title: Orders API
+  description: Orders API managed by team-orders. Backed by Azure Function func-orders-9249.
+  version: 1.0.0
+servers:
+  - url: https://func-orders-9249.azurewebsites.net/api
+paths:
+  /orders:
+    get:
+      summary: List orders
+      operationId: listOrders
+      responses:
+        '200': { description: OK }
+    post:
+      summary: Create an order
+      operationId: createOrder
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                total: { type: number }
+                items: { type: integer }
+      responses:
+        '201': { description: Created }

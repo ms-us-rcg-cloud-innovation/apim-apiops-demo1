@@ -1,0 +1,26 @@
+# CODEOWNERS — enforces per-team review on APIOps artifacts
+# Replace @AiGhostMod/* with real GitHub teams once you create them.
+
+# team-catalog owns the two catalog APIs and their specs
+/apimartifacts/apis/catalog-products-api/   @AiGhostMod/team-catalog
+/apimartifacts/apis/catalog-weather-api/    @AiGhostMod/team-catalog
+/apimartifacts/products/team-catalog/       @AiGhostMod/team-catalog
+/apimartifacts/backends/backend-catalog-*/  @AiGhostMod/team-catalog
+/specs/catalog-*.openapi.yaml               @AiGhostMod/team-catalog
+/configurations/configuration.team-catalog.yaml  @AiGhostMod/team-catalog
+/functions/catalog-products/                @AiGhostMod/team-catalog
+/functions/catalog-weather/                 @AiGhostMod/team-catalog
+/.github/workflows/publish-team-catalog.yaml @AiGhostMod/team-catalog
+
+# team-orders owns the orders API
+/apimartifacts/apis/orders-real-api/        @AiGhostMod/team-orders
+/apimartifacts/products/team-orders/        @AiGhostMod/team-orders
+/apimartifacts/backends/backend-orders/     @AiGhostMod/team-orders
+/specs/orders.openapi.yaml                  @AiGhostMod/team-orders
+/configurations/configuration.team-orders.yaml  @AiGhostMod/team-orders
+/functions/orders/                          @AiGhostMod/team-orders
+/.github/workflows/publish-team-orders.yaml @AiGhostMod/team-orders
+
+# Platform-owned (global policies, shared infra, runner workflow)
+/apimartifacts/policies/                    @AiGhostMod
+/.github/workflows/run-extractor.yaml       @AiGhostMod

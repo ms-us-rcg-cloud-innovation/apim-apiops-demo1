@@ -1,0 +1,51 @@
+openapi: 3.0.3
+info:
+  title: Catalog - Products API
+  description: Product catalog managed by team-catalog. Backed by Azure Function func-catalog-products-9249.
+  version: 1.0.0
+servers:
+  - url: https://func-catalog-products-9249.azurewebsites.net/api
+paths:
+  /products:
+    get:
+      summary: List products
+      operationId: listProducts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count: { type: integer }
+                  products:
+                    type: array
+                    items: { $ref: '#/components/schemas/Product' }
+  /products/{id}:
+    get:
+      summary: Get a product by id
+      operationId: getProduct
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Product' }
+        '404':
+          description: Not found
+components:
+  schemas:
+    Product:
+      type: object
+      required: [id, name, price]
+      properties:
+        id:    { type: string }
+        name:  { type: string }
+        price: { type: number, format: double }
+        sku:   { type: string }
