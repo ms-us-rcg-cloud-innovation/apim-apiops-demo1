@@ -27,7 +27,7 @@ jobs:
       - name: Download extractor
         run: |
           curl -fsSLo extractor.zip https://github.com/Azure/apiops/releases/download/${APIOPS_RELEASE}/extractor-linux-x64.zip
-          unzip -o extractor.zip
+          python3 -m zipfile -e extractor.zip .
           chmod +x extractor
 
       - name: Run extractor

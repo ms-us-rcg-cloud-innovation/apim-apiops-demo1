@@ -38,7 +38,7 @@ jobs:
       - name: Download publisher
         run: |
           curl -fsSLo publisher.zip https://github.com/Azure/apiops/releases/download/${APIOPS_RELEASE}/publisher-linux-x64.zip
-          unzip -o publisher.zip
+          python3 -m zipfile -e publisher.zip .
           chmod +x publisher
 
       - name: Run publisher
