@@ -1,0 +1,7 @@
+{
+  "properties": {
+    "protocol": "http",
+    "title": "backend-catalog-weather",
+    "url": "https://func-catalog-weather-9249.azurewebsites.net/api"
+  }
+}

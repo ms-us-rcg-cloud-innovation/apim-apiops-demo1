@@ -1,0 +1,10 @@
+{
+  "properties": {
+    "loggerType": "applicationInsights",
+    "credentials": {
+      "instrumentationKey": "{{Logger-Credentials--68e59b6b463461083093e7f0}}"
+    },
+    "isBuffered": true,
+    "resourceId": "/subscriptions/6ec1a899-f785-46d6-b462-21e6659aaccf/resourceGroups/apim-workshops/providers/microsoft.insights/components/apim-AI"
+  }
+}

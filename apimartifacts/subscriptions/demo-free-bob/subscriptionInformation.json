@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "Demo Free - Bob",
+    "scope": "/products/demo-free",
+    "allowTracing": false,
+    "state": "active"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "Demo Pro - Carol",
+    "scope": "/products/demo-pro",
+    "allowTracing": false,
+    "state": "active"
+  }
+}

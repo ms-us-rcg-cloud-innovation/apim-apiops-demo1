@@ -1,0 +1,10 @@
+{
+  "properties": {
+    "displayName": "demo-api-key",
+    "secret": true,
+    "tags": [
+      "demo",
+      "secret"
+    ]
+  }
+}

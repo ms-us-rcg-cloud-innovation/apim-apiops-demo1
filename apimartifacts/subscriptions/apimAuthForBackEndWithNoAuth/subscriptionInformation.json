@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "apimAuthForBackEndWithNoAuth",
+    "scope": "/products/apiwithnoauth",
+    "allowTracing": false,
+    "state": "active"
+  }
+}

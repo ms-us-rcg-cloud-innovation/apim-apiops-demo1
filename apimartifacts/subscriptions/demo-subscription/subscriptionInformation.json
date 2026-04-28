@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "Demo Subscription",
+    "scope": "/products/secure-api-product",
+    "allowTracing": false,
+    "state": "active"
+  }
+}

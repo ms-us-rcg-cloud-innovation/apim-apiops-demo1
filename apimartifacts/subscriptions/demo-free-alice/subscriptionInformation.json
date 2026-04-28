@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "Demo Free - Alice",
+    "scope": "/products/demo-free",
+    "allowTracing": false,
+    "state": "active"
+  }
+}

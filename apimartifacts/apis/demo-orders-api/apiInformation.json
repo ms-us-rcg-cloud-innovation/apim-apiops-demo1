@@ -1,0 +1,18 @@
+{
+  "properties": {
+    "path": "demo/orders",
+    "apiRevision": "1",
+    "authenticationSettings": {},
+    "description": "Premium API assigned only to the demo-pro product. Demonstrates Product-scope rate limiting and per-operation throttling per subscription key.",
+    "displayName": "Demo - Orders API (Pro only)",
+    "isCurrent": true,
+    "protocols": [
+      "https"
+    ],
+    "subscriptionKeyParameterNames": {
+      "header": "Ocp-Apim-Subscription-Key",
+      "query": "subscription-key"
+    },
+    "subscriptionRequired": true
+  }
+}

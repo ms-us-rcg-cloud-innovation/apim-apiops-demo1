@@ -1,0 +1,19 @@
+<policies>
+	<inbound>
+		<base />
+		<set-variable name="scope-product" value="demo-pro" />
+		<rate-limit calls="100" renewal-period="60" remaining-calls-header-name="X-RateLimit-Remaining" total-calls-header-name="X-RateLimit-Limit" />
+	</inbound>
+	<backend>
+		<base />
+	</backend>
+	<outbound>
+		<base />
+		<set-header name="X-Scope-Product" exists-action="override">
+			<value>demo-pro</value>
+		</set-header>
+	</outbound>
+	<on-error>
+		<base />
+	</on-error>
+</policies>
