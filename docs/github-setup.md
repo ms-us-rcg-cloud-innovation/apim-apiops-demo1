@@ -182,7 +182,95 @@ That's it — workflows on the runner can now `azure/login@v2` with the federate
 
 ---
 
-## 9. Day-2 ops
+## 9. Browser demo: prove that each team can only edit their own APIs
+
+This walks through three pull requests done **entirely from the GitHub UI** — no terminal — to demonstrate that CODEOWNERS + branch protection enforces per-team ownership.
+
+### 9a. One-time setup (browser only)
+
+**Create the two teams**
+
+1. Go to https://github.com/orgs/ms-us-rcg-cloud-innovation/new-team
+2. Create `team-catalog` → add at least one member.
+3. Create `team-orders` → add a *different* member.
+
+**Give both teams Write access to the repo**
+
+`Repo → Settings → Collaborators and teams → Add teams` → pick `team-catalog` and `team-orders` → Role: **Write**.
+
+**Enable branch protection that requires CODEOWNERS review**
+
+`Repo → Settings → Rules → Rulesets → New branch ruleset`:
+
+- **Name**: `protect-main`
+- **Enforcement status**: Active
+- **Target branches**: Include default branch
+- **Rules**:
+  - ✅ Require a pull request before merging
+    - Required approvals: **1**
+    - ✅ **Require review from Code Owners** ← the gate
+    - ✅ Dismiss stale approvals when new commits are pushed
+- Save.
+
+> Without the "Require review from Code Owners" box, CODEOWNERS only *suggests* reviewers — it doesn't block merges. This box is what makes the demo work.
+
+### 9b. The 3-PR demo (all clicks, no terminal)
+
+#### PR A — `team-orders` member edits their own API → ✅ merges
+
+1. In the repo, branch dropdown → type `demo/orders-edit` → **Create branch demo/orders-edit from main**.
+2. Open `apimartifacts/apis/orders-real-api/apiInformation.yaml` → ✏️ pencil → add a blank line at the bottom → **Commit changes…** → **Commit directly to demo/orders-edit**.
+3. Banner: **Compare & pull request → Create pull request**.
+4. **Right sidebar → Reviewers** auto-shows `@ms-us-rcg-cloud-innovation/team-orders`.
+5. **Files changed** tab → notice the 🦉 owl icon next to the file → "Required review from team-orders".
+6. As a `team-orders` member: **Add your review → Approve**.
+7. Banner turns green → **Merge pull request**. ✅
+8. **Actions** tab → only `Publish team-orders` ran (path filter from `.github/workflows/publish-team-orders.yaml`).
+
+#### PR B — same `team-orders` member edits a `team-catalog` API → ❌ blocked
+
+1. Branch dropdown → create `demo/cross-team-edit` from main.
+2. Edit `apimartifacts/apis/catalog-products-api/apiInformation.yaml` → blank line → commit to that branch.
+3. Open PR.
+4. Reviewers auto-requests `@team-catalog` (NOT `team-orders`).
+5. As the `team-orders` user → **Add your review → Approve**.
+6. PR shows: **"Review required from Code Owners"**. **Merge** button stays disabled even with the approval.
+7. Switch to a `team-catalog` member → Approve → button turns green → merge.
+
+> This is the money slide of the demo: same person could approve PR A but **cannot** approve a PR touching another team's files.
+
+#### PR C — mixed PR → both teams required
+
+1. Branch `demo/mixed-edit` from main.
+2. Edit one file under `apimartifacts/apis/orders-real-api/` AND one under `apimartifacts/apis/catalog-products-api/`.
+3. Open PR.
+4. Reviewers panel requests **both** `team-catalog` AND `team-orders`.
+5. Approval from one team alone is not enough — Merge stays disabled until both approve.
+
+### 9c. What to point out during the demo
+
+- **Files changed tab**: each file has a 🦉 owl icon — hover for "Code owners: @team-…". Visualizes per-file ownership without anyone needing to read CODEOWNERS.
+- **Right-hand sidebar → Code owners section**: lists exactly whose approval is missing.
+- **Actions tab post-merge**: only the matching team's `Publish team-…` workflow runs. Path filters in the workflow YAMLs make this happen.
+- **Self-approval**: even with one test account, GitHub blocks self-approval, so PR B can be demoed solo by attempting to merge and showing the disabled Merge button.
+
+### 9d. Cleanup between demos
+
+After running the demo PRs, close them and delete the branches so the repo is clean for the next run:
+
+```bash
+REPO=ms-us-rcg-cloud-innovation/apim-apiops-demo1
+gh pr list --repo $REPO --state open --json number --jq '.[].number' | xargs -I{} gh pr close {} --repo $REPO --delete-branch
+for b in $(gh api repos/$REPO/branches --jq '.[].name' | grep -v '^main$'); do
+  gh api -X DELETE repos/$REPO/git/refs/heads/$b
+done
+```
+
+Or do it from the browser: each closed PR has a **Delete branch** button; remaining branches can be deleted from `Repo → Branches`.
+
+---
+
+## 10. Day-2 ops
 
 - **Adding a new API to a team**: edit `configurations/configuration.<team>.yaml` and add the API name. Add CODEOWNERS lines for the new path. Re-run extractor or push the new artifact.
 - **Rotating a function key**: regenerate via Azure portal/CLI, update the named value via the portal/CLI, then run extractor to bring `apimartifacts/named values/<name>` back in sync (the publisher won't overwrite the secret value during a routine push, but it tracks all other metadata).
