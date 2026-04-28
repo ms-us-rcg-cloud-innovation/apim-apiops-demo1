@@ -12,7 +12,7 @@
     "serviceUrl": "https://func-orders-9249.azurewebsites.net/api",
     "subscriptionKeyParameterNames": {
       "header": "Ocp-Apim-Subscription-Key",
-      "query": "subscription-key"
+      "query": "subscription-key1"
     },
     "subscriptionRequired": true
   }
