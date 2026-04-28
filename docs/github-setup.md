@@ -130,6 +130,7 @@ The publisher must run inside the APIM vnet because APIM is in Internal mode. I 
 
 GitHub UI: `Settings → Actions → Runners → New self-hosted runner → Linux`. Copy the `--token` value (valid 1 hour).
 
+./config.sh --url https://github.com/ms-us-rcg-cloud-innovation/apim-apiops-demo1 --token AT6JEQ736RY54TO7YJB7SO3J6EUQ2
 ### 7b. SSH in and install
 
 ```bash
@@ -149,7 +150,7 @@ tar xzf actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 
 ./config.sh \
   --url https://github.com/ms-us-rcg-cloud-innovation/apim-apiops-demo1 \
-  --token <PASTE TOKEN HERE> \
+  --token AT6JEQ736RY54TO7YJB7SO3J6EUQ2 \
   --name apimkt-runner-vm \
   --labels self-hosted,apim-vnet \
   --unattended

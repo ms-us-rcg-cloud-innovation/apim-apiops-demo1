@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  APIOPS_RELEASE: v6.0.1.3
+  APIOPS_RELEASE: v7.0.1
   ARTIFACTS_DIR: apimartifacts
 
 jobs:
@@ -26,7 +26,8 @@ jobs:
 
       - name: Download extractor
         run: |
-          curl -sSLo extractor https://github.com/Azure/apiops/releases/download/${APIOPS_RELEASE}/extractor.linux-x64
+          curl -fsSLo extractor.zip https://github.com/Azure/apiops/releases/download/${APIOPS_RELEASE}/extractor-linux-x64.zip
+          unzip -o extractor.zip
           chmod +x extractor
 
       - name: Run extractor

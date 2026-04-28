@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
 
 env:
-  APIOPS_RELEASE: v6.0.1.3
+  APIOPS_RELEASE: v7.0.1
   ARTIFACTS_DIR: apimartifacts
   CONFIG_FILE: configurations/configuration.team-orders.yaml
 
@@ -36,7 +36,8 @@ jobs:
 
       - name: Download publisher
         run: |
-          curl -sSLo publisher https://github.com/Azure/apiops/releases/download/${APIOPS_RELEASE}/publisher.linux-x64
+          curl -fsSLo publisher.zip https://github.com/Azure/apiops/releases/download/${APIOPS_RELEASE}/publisher-linux-x64.zip
+          unzip -o publisher.zip
           chmod +x publisher
 
       - name: Run publisher
