@@ -1,0 +1,11 @@
+{
+  "properties": {
+    "displayName": "orders-host",
+    "secret": false,
+    "tags": [
+      "apiops",
+      "team"
+    ],
+    "value": "https://func-orders-9249.azurewebsites.net/api"
+  }
+}

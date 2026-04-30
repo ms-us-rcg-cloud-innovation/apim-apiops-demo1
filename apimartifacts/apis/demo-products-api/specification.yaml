@@ -1,0 +1,41 @@
+openapi: 3.0.1
+info:
+  title: Demo - Products API
+  description: 'Demonstrates Global, API, and Operation policy scopes plus the correlation-id policy fragment. Returns mocked product catalog data.'
+  version: '1.0'
+servers:
+  - url: https://apim-networked-a.azure-api.net/demo/products
+paths:
+  /:
+    get:
+      summary: List products
+      operationId: list-products
+      responses:
+        '200':
+          description: ''
+  '/{id}':
+    get:
+      summary: Get product
+      operationId: get-product
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

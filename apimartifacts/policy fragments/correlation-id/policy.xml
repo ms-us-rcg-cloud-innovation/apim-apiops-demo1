@@ -1,0 +1,6 @@
+<fragment>
+	<set-variable name="correlationId" value="@(context.Request.Headers.GetValueOrDefault(&quot;X-Correlation-Id&quot;, Guid.NewGuid().ToString()))" />
+	<set-header name="X-Correlation-Id" exists-action="override">
+		<value>@((string)context.Variables[&quot;correlationId&quot;])</value>
+	</set-header>
+</fragment>

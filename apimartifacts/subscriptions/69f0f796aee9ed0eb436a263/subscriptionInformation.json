@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "scope": "/products/team-catalog",
+    "allowTracing": false,
+    "ownerId": "/subscriptions/6ec1a899-f785-46d6-b462-21e6659aaccf/resourceGroups/apim-workshops/providers/Microsoft.ApiManagement/service/apim-networked-a/users/1",
+    "state": "active"
+  }
+}

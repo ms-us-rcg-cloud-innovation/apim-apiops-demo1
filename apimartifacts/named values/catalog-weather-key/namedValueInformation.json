@@ -1,0 +1,6 @@
+{
+  "properties": {
+    "displayName": "catalog-weather-key",
+    "secret": true
+  }
+}

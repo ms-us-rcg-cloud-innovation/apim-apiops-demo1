@@ -1,0 +1,11 @@
+{
+  "properties": {
+    "displayName": "catalog-weather-host",
+    "secret": false,
+    "tags": [
+      "apiops",
+      "team"
+    ],
+    "value": "https://func-catalog-weather-9249.azurewebsites.net/api"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "properties": {
+    "loggerId": "/loggers/apim-AI",
+    "alwaysLog": "allErrors",
+    "backend": {
+      "request": {
+        "body": {
+          "bytes": 8192
+        },
+        "headers": []
+      },
+      "response": {
+        "body": {
+          "bytes": 8192
+        },
+        "headers": []
+      }
+    },
+    "frontend": {
+      "request": {
+        "body": {
+          "bytes": 8192
+        },
+        "headers": []
+      },
+      "response": {
+        "body": {
+          "bytes": 8192
+        },
+        "headers": []
+      }
+    },
+    "httpCorrelationProtocol": "W3C",
+    "logClientIp": true,
+    "sampling": {
+      "percentage": 100,
+      "samplingType": "fixed"
+    },
+    "verbosity": "information"
+  }
+}

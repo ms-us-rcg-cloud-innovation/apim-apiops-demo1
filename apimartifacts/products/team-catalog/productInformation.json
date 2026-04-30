@@ -1,0 +1,10 @@
+{
+  "properties": {
+    "displayName": "Team Catalog",
+    "description": "Owned by team-catalog. Includes the Products and Weather APIs.",
+    "approvalRequired": false,
+    "state": "published",
+    "subscriptionRequired": true,
+    "subscriptionsLimit": 100
+  }
+}

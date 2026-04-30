@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "Team Catalog Demo Sub",
+    "scope": "/products/team-catalog",
+    "allowTracing": false,
+    "state": "active"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "properties": {
+    "path": "demo/weather",
+    "apiRevision": "1",
+    "authenticationSettings": {},
+    "description": "Demonstrates Operation-scope conditional logic (return-response \u002B choose) with dynamic mock data based on URL template parameter, plus the correlation-id fragment.",
+    "displayName": "Demo - Weather API",
+    "isCurrent": true,
+    "protocols": [
+      "https"
+    ],
+    "subscriptionKeyParameterNames": {
+      "header": "Ocp-Apim-Subscription-Key",
+      "query": "subscription-key"
+    },
+    "subscriptionRequired": true
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "properties": {
+    "protocol": "http",
+    "title": "backend-catalog-products",
+    "url": "https://func-catalog-products-9249.azurewebsites.net/api"
+  }
+}

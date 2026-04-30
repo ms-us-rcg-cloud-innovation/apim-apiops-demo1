@@ -1,0 +1,34 @@
+openapi: 3.0.1
+info:
+  title: Orders
+  description: Orders API. Managed by team-orders.
+  version: '1.0'
+servers:
+  - url: https://apim-networked-a.azure-api.net/orders
+paths:
+  /orders:
+    get:
+      summary: List orders
+      operationId: list-orders
+      responses:
+        '200':
+          description: ''
+    post:
+      summary: Create order
+      operationId: create-order
+      responses:
+        '200':
+          description: ''
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

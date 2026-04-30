@@ -1,0 +1,34 @@
+openapi: 3.0.1
+info:
+  title: Demo - Weather API
+  description: 'Demonstrates Operation-scope conditional logic (return-response + choose) with dynamic mock data based on URL template parameter, plus the correlation-id fragment.'
+  version: '1.0'
+servers:
+  - url: https://apim-networked-a.azure-api.net/demo/weather
+paths:
+  '/{city}':
+    get:
+      summary: Get weather
+      operationId: get-weather
+      parameters:
+        - name: city
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

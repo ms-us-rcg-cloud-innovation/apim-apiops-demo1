@@ -1,0 +1,11 @@
+{
+  "properties": {
+    "displayName": "func-app-2024-arek-key",
+    "secret": true,
+    "tags": [
+      "key",
+      "function",
+      "auto"
+    ]
+  }
+}
