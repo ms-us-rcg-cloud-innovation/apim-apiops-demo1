@@ -1,0 +1,15 @@
+{
+  "properties": {
+    "credentials": {
+      "header": {
+        "x-functions-key": [
+          "{{func-app-2024-arek-key}}"
+        ]
+      }
+    },
+    "description": "func-app-2024-arek",
+    "protocol": "http",
+    "resourceId": "https://management.azure.com/subscriptions/6ec1a899-f785-46d6-b462-21e6659aaccf/resourceGroups/func-rg/providers/Microsoft.Web/sites/func-app-2024-arek",
+    "url": "https://func-app-2024-arek.azurewebsites.net/api"
+  }
+}

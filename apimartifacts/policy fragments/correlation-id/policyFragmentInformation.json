@@ -1,0 +1,5 @@
+{
+  "properties": {
+    "description": "Ensures every request has an X-Correlation-Id header (generates one if missing) and stores it in context.Variables for outbound echo. Reusable across APIs."
+  }
+}

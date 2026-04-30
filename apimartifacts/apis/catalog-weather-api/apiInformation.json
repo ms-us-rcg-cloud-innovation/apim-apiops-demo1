@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "path": "catalog/weather",
+    "apiRevision": "1",
+    "authenticationSettings": {},
+    "description": "Weather lookup API. Managed by team-catalog.",
+    "displayName": "Catalog - Weather",
+    "isCurrent": true,
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "https://func-catalog-weather-9249.azurewebsites.net/api",
+    "subscriptionKeyParameterNames": {
+      "header": "Ocp-Apim-Subscription-Key",
+      "query": "subscription-key"
+    },
+    "subscriptionRequired": true
+  }
+}

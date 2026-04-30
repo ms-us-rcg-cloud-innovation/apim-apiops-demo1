@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "singleApi1",
+    "scope": "/apis/echo-api",
+    "allowTracing": false,
+    "state": "active"
+  }
+}

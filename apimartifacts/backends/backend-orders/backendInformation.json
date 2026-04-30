@@ -1,0 +1,7 @@
+{
+  "properties": {
+    "protocol": "http",
+    "title": "backend-orders",
+    "url": "https://func-orders-9249.azurewebsites.net/api"
+  }
+}

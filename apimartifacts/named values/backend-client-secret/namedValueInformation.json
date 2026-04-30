@@ -1,0 +1,6 @@
+{
+  "properties": {
+    "displayName": "backend-client-secret",
+    "secret": true
+  }
+}

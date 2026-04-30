@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "demoSub11",
+    "scope": "/products/demoallapisproduct1",
+    "allowTracing": false,
+    "state": "active"
+  }
+}

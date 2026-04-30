@@ -1,0 +1,9 @@
+{
+  "properties": {
+    "displayName": "demoAllApisProduct1",
+    "description": "asdasd",
+    "approvalRequired": false,
+    "state": "published",
+    "subscriptionRequired": true
+  }
+}

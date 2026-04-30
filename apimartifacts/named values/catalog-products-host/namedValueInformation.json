@@ -1,0 +1,11 @@
+{
+  "properties": {
+    "displayName": "catalog-products-host",
+    "secret": false,
+    "tags": [
+      "apiops",
+      "team"
+    ],
+    "value": "https://func-catalog-products-9249.azurewebsites.net/api"
+  }
+}

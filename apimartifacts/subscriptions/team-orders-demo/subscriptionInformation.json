@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "Team Orders Demo Sub",
+    "scope": "/products/team-orders",
+    "allowTracing": false,
+    "state": "active"
+  }
+}

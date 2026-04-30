@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "path": "orders",
+    "apiRevision": "1",
+    "authenticationSettings": {},
+    "description": "Orders API. Managed by team-orders.",
+    "displayName": "Orders",
+    "isCurrent": true,
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "https://func-orders-9249.azurewebsites.net/api",
+    "subscriptionKeyParameterNames": {
+      "header": "Ocp-Apim-Subscription-Key",
+      "query": "subscription-key"
+    },
+    "subscriptionRequired": true
+  }
+}
